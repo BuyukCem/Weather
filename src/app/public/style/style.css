@@ -1,0 +1,13 @@
+body{
+    background-color: #ffafbd;
+}
+p, h4{
+    color: #ffffff;
+}
+.card{
+    background-color: #ffafbd;
+    border: 0;
+}
+#svgstyle{
+    fill: green;
+}

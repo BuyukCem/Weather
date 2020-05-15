@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta charset="utf_8">
+    <title>Weather App</title>
+
+    <meta name="description" lang="en"
+          content="Latest weather conditions and forecasts for the France and the world. Includes up to 14-days of hourly forecast information.">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../style/style.css">
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            intouegrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 mt-5">
+                <form action="/getweather" method="post">
+                    <input type="text" name="city" placeholder="Entrer a city" class="InputForm" id="city" required>
+                    <div id="button1">
+                        <!--<button type="submit" form="form1" value="Submit" class="ButtonForm">Get Weather</button>-->
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-7">
+                <h4 class="font-weight-bold">
+                    <% if(city !== null){ %>
+                        <%= city %>
+                    <% } %>
+                </h4>
+                <p><% if(time !== null && days){ %><%= time %><% } %>, <%= days%></p>
+                <p class="display-1"><% if(degres !== null){ %><%= degres %><% } %>&deg;</p>
+            </div>
+            <div class="col-4 mr-3">
+                <svg width="100%" height="100%" viewBox="0 0 50 50"
+                     xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <image xlink:href="../img/<% if(icone !== null){%><%=icone%><%}%>.svg" x="0" y="0" height="50" width="50" />
+                </svg>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
